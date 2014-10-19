@@ -1,0 +1,6 @@
+name = "Mobile notifications"
+description = "Send notifications to mobile devices through Push Notifications module"
+package = Other
+core = 7.x
+dependencies[] = push_notifications 
+dependencies[] = node_privacy_byrole
