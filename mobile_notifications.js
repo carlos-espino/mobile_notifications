@@ -14,9 +14,9 @@
 /**
  * Config values
  */
-var registration_url = 'http://geolan.org/drupalgap/push_notifications';
-var get_token_url = "http://geolan.org/services/session/token";
-var sender_id = "652884299475";
+var registration_url = 'http://example.org/drupalgap/push_notifications';
+var get_token_url = "http://example.org/services/session/token";
+var sender_id = "123456789";
 
 /**
  * Load include js files
