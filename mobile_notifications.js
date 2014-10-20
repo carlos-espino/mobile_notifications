@@ -14,9 +14,9 @@
 /**
  * Config values
  */
-var registration_url = 'http://my-site.org/drupalgap/push_notifications';
-var get_token_url = "http://my-site.org/services/session/token";
-var sender_id = "XXXXXXXXXXXXX";
+var registration_url = 'http://geolan.org/drupalgap/push_notifications';
+var get_token_url = "http://geolan.org/services/session/token";
+var sender_id = "652884299475";
 
 /**
  * Load include js files
@@ -44,7 +44,8 @@ function mobile_notifications_menu() {
   var items = {};
   items['mobile-notifications'] = {
     title: 'Notifications',
-    page_callback: 'mobile_notifications_notifications_page'
+    page_callback: 'mobile_notifications_notifications_page',
+    options:{reloadPage:true},
   };
   return items;
 }
@@ -73,7 +74,7 @@ function mobile_notifications_notifications_page() {
     };
     return content;
   }
-  catch (error) { alert('pipo');console.log('mobile_notifications - ' + error); }
+  catch (error) { console.log('mobile_notifications - ' + error); }
 }
 
 /**
@@ -87,7 +88,7 @@ function mobile_notifications_notifications_list_row(view, row) {
 		}
 		content = '<td><div class="ui-body ui-body-a ui-corner-all">' + 
 								'<h3>' + row.title + '</h3>' + 
-								'<div>' + row.Body + '</div>' +
+								'<div>' + row.Message + '</div>' +
 								'<div>'+  row.Posted + attachment + '</div>' +
 							'</div></td>';
 		
@@ -157,7 +158,7 @@ function onNotification(e) {
 			if (e.foreground){
 				navigator.notification.beep(1);
 			}
-			drupalgap_goto('mobile-notifications');
+			drupalgap_goto('mobile-notifications', {reloadPage:true});
 			break;
 
 	case 'error':
