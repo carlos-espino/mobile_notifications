@@ -40,6 +40,8 @@ Add this menu link in some menu in your settings.js file:
 	
 }`
 
+Copy in your module folder (app/modules/custom/mobile_notifications/) the PushNotification.js file. Is in the plugin folder in "plugins/com.phonegap.plugins.PushPlugin/Example/www/"
+
 ###Config
 
 Change config value in mobile_notifications.js:
